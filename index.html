@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Potato Pete</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="game">
+  <canvas id="game" width="960" height="640" tabindex="0"></canvas>
+  <div id="start" class="start">
+    <div id="intro" class="start-panel">
+      <h1>Potato Pete</h1>
+      <ul>
+        <li>Pete the cat loves potatoes. Press <kbd>Space</kbd> to jump and catch them in his mouth as they fly by.</li>
+        <li>A quick tap is a small hop. Hold <kbd>Space</kbd> longer to jump higher.</li>
+        <li>Every potato Pete eats scores 100 points and gives back one unit of health.</li>
+        <li>Every potato he misses costs one unit of health.</li>
+        <li>Grab the potatoes glowing gold! A golden potato is worth 300 points.</li>
+        <li>Watch out for potatoes glowing red! A bad potato takes 5 units of health and leaves Pete stuck for a moment.</li>
+        <li>Potatoes keep getting faster, and after a while more of them come than Pete can catch. Pick the ones he can reach.</li>
+        <li>When his health runs out, the game is over.</li>
+      </ul>
+      <button id="start-game" type="button">Start Game</button>
+      <button id="show-scores" class="secondary" type="button">High Scores</button>
+    </div>
+    <div id="scores" class="start-panel" hidden>
+      <h1>High Scores</h1>
+      <table>
+        <thead><tr><th>#</th><th>Initials</th><th>Score</th></tr></thead>
+        <tbody class="score-rows"></tbody>
+      </table>
+      <button id="hide-scores" type="button">Back</button>
+    </div>
+    <div id="end" class="start-panel" hidden>
+      <h1>Game Over</h1>
+      <p class="final-score">Final score: <span id="end-score"></span></p>
+      <p>Pete ate <span id="end-eaten"></span>.</p>
+      <form id="initials-form" hidden>
+        <label for="initials">New high score! Enter your initials:</label>
+        <input id="initials" maxlength="3" autocomplete="off" autocapitalize="characters" spellcheck="false">
+        <button id="save-initials" type="submit" disabled>Save</button>
+      </form>
+      <div id="end-results" hidden>
+        <table>
+          <thead><tr><th>#</th><th>Initials</th><th>Score</th></tr></thead>
+          <tbody class="score-rows"></tbody>
+        </table>
+        <button id="play-again" type="button">Play Again</button>
+        <p class="key-hint">or press <kbd>R</kbd> to play again</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="hint">Jump with <kbd>Space</kbd>; hold it longer to jump higher. Clicking or tapping the game works too.</div>
+<script src="game.js"></script>
+</body>
+</html>
